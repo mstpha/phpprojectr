@@ -8,9 +8,10 @@
         user:"root",
         host:"localhost",
         password:"ademz1s",
-        database:"new_schema",
+        database:"phpproj",
     });
-
+    // normalment el connection l serveur hakka fi star baad hedha, esm l db database phpproj hawka
+    $conn=new mysqli()
     app.use(express.json());
 
     app.listen(3001,()=>{
@@ -59,74 +60,3 @@
     })
 
     
-    app.post('/MineGame',(req,res)=>{
-        const name=req.body.name;
-        const score=req.body.score;
-        const upd=req.body.upd
- 
-        const sqlUpdate = `
-        UPDATE gamemode_scores
-        SET minescore=?
-        WHERE name=?`;
-
-        const sqlINSERT=`
-        INSERT INTO gamemode_scores(name,minescore) VALUES(?,?)`
-        console.log(upd)
-        if (upd===true){
-            db.query(sqlUpdate, [score,name], (err, result) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(result);
-                }
-        });}
-            else{
-                db.query(sqlINSERT, [name,score], (err, result) => {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        console.log(result);
-                    }
-        });}
-    })
-    app.get('/MScore',(req,res)=>{
-        db.query("SELECT * FROM gamemode_scores",(err,result)=>{
-            if (err){
-                console.log(err)
-            }
-            else{
-                res.send(result)
-            }
-        })
-    })
-
-    app.post('/CarGame',(req,res)=>{
-        const name=req.body.name;
-        const score=req.body.score;
-        const upd=req.body.upd
- 
-        const sqlUpdate = `
-        UPDATE gamemode_scores
-        SET carscore=?
-        WHERE name=?`;
-
-        const sqlINSERT=`
-        INSERT INTO gamemode_scores(name,carscore) VALUES(?,?)`
-        console.log(upd)
-        if (upd===true){
-            db.query(sqlUpdate, [score,name], (err, result) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(result);
-                }
-        });}
-            else{
-                db.query(sqlINSERT, [name,score], (err, result) => {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        console.log(result);
-                    }
-        });}
-    })
