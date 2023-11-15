@@ -1,42 +1,45 @@
-
-.profilesec{
-    border:1px solid black;
+.profilesec {
+    border: 1px solid black;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
-    padding:1vw;
-    margin:1vh; 
+    padding: 1vw;
+    margin: 1vh;
     background-color: aliceblue;
     background: url("box.jpg") no-repeat;
-    color:white;
-}
-.post{
-    border:1px solid black;
-    border-radius: 5px;
-    height:15vh;
-    background: url("box.jpg") no-repeat;
-    color:white;
-    display:flex;
-}
-.profimg{
-    width:60px;
-    height:60px;
-    padding:1vw;
-    border-radius: 100%;
-}
-.profimg1{
-    width:60px;
-    height:60px;
-    padding:1vw;
-    border-radius: 100%;
-}
-.mainsec{
-    width:80vw;
-    margin:auto;
+    color: white;
 }
 
-.id{
+.post {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 15vh;
+    background: url("box.jpg") no-repeat;
+    color: white;
+    display: flex;
+}
+
+.profimg {
+    width: 60px;
+    height: 60px;
+    padding: 1vw;
+    border-radius: 100%;
+}
+
+.profimg1 {
+    width: 60px;
+    height: 60px;
+    padding: 1vw;
+    border-radius: 100%;
+}
+
+.mainsec {
+    width: 80vw;
+    margin: auto;
+}
+
+.id {
     display: flex;
     flex-direction: column;
-    padding:2vw;
+    padding: 2vw;
 }

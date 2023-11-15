@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,15 +8,20 @@ import {
   Outlet,
 } from "react-router-dom";
 import "./Main.css";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Img from "./../bg.jpg";
 function App() {
+  const ref = useRef(null)
+  const isInview = useInView(ref, { once: true })
   return (
     <div className="main">
-      <div className="mainsec">
+      <div className="mainsec" >
+
+
         <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          initial="hidden"
+          animate="animation"
           transition={{ duration: 1 }}
           className="profilesec"
         >
@@ -45,9 +50,9 @@ function App() {
           </div>
         </motion.div>
         <motion.div className="post">
-            <img src={Img}
+          <img src={Img}
             className="profimg1"
-          /> <div style={{marginTop:"2vh"}}>name ben name</div>
+          /> <div style={{ marginTop: "2vh" }}>name ben name</div>
         </motion.div>
       </div>
     </div>
